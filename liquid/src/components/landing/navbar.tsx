@@ -8,7 +8,6 @@ const Navbar = () => {
     const [address, setAddress] = useState<string | null>(null);
 
     useEffect(() => {
-        // Check if we're already connected when component mounts
         const checkConnection = async () => {
             try {
                 const publicKey = await getPublicKey();
