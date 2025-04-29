@@ -8,13 +8,12 @@ import {
 const StakingImpl: React.FC = () => {
   // State for user input and UI feedback
   const [publicKey, setPublicKey] = useState<string>(''); // User's public key from Freighter
-  const [isWalletConnected, setIsWalletConnected] = useState<boolean>(false); // Wallet connection status
-  const [tokenAddress, setTokenAddress] = useState<string>(''); // Token contract address
-  const [rewardRate, setRewardRate] = useState<string>(''); // Reward rate (tokens per second)
-  const [loading, setLoading] = useState<boolean>(false); // Loading state
-  const [message, setMessage] = useState<string>(''); // Success/error message
+  const [isWalletConnected, setIsWalletConnected] = useState<boolean>(false); 
+  const [tokenAddress, setTokenAddress] = useState<string>(''); 
+  const [rewardRate, setRewardRate] = useState<string>(''); 
+  const [loading, setLoading] = useState<boolean>(false); 
+  const [message, setMessage] = useState<string>(''); 
 
-  // Connect to Freighter wallet
   const connectWallet = async () => {
     try {
       if (await isConnected()) {

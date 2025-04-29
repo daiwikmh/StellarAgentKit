@@ -6,7 +6,7 @@ export default function Features() {
       <div className="bg-purple-500 rounded-full p-8 md:p-12 flex items-center justify-center">
         <Music size={48} className="text-black" />
         <h1 className="text-4xl md:text-5xl font-bold text-black">
-          100+
+          10+
         </h1>
       </div>
       <div className="bg-green-500 rounded-xl p-8 md:p-12 flex items-center justify-center">

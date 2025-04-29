@@ -4,13 +4,14 @@ import StellarChat from "./pages/StellarChat";
 import StakingImpl from "./components/StakingImpl";
 import Hero from "./components/landing-page/Landing";
 import LandingPage from "./components/landing-page/Landing";
+import LiquidationPoolApp from "./components/Liquidation";
 
 function App() {
   return (
     <>
       
       <Routes>
-        <Route path="/" element={<StellarChat />} />
+        <Route path="/" element={<LiquidationPoolApp />} />
       </Routes>
     </>
   );
