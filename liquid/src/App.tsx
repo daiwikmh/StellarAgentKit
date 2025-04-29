@@ -5,13 +5,14 @@ import StakingImpl from "./components/StakingImpl";
 import Hero from "./components/landing-page/Landing";
 import LandingPage from "./components/landing-page/Landing";
 import LiquidationPoolApp from "./components/Liquidation";
+import PriceOracleApp from "./components/oracle";
 
 function App() {
   return (
     <>
       
       <Routes>
-        <Route path="/" element={<LiquidationPoolApp />} />
+        <Route path="/" element={<PriceOracleApp />} />
       </Routes>
     </>
   );

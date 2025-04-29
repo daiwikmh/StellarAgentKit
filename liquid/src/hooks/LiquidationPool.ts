@@ -67,16 +67,13 @@ import {
           .build();
       }
   
-      // Simulate transaction for read-only calls
       const simulation = await server.simulateTransaction(transaction).catch((err) => {
         console.error(`Simulation failed for ${functName}: ${err.message}`);
         throw new Error(`Failed to simulate transaction: ${err.message}`);
       });
   
-      // Log simulation response for debugging
       console.log(`Simulation response for ${functName}:`, JSON.stringify(simulation, null, 2));
   
-      // Handle simulation response for read-only calls
       if ("results" in simulation && Array.isArray(simulation.results) && simulation.results.length > 0) {
         console.log(`Read-only call detected for ${functName}`);
         const result = simulation.results[0];
