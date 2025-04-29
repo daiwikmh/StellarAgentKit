@@ -63,7 +63,7 @@ export function AnimatedTextIcons() {
               variants={textVariants}
               className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white"
             >
-              Your favorite
+              All functions
             </motion.h2>
             <motion.div
               variants={iconVariants}
@@ -75,7 +75,7 @@ export function AnimatedTextIcons() {
               variants={textVariants}
               className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white"
             >
-              songs.
+              Stellar
             </motion.h2>
           </div>
 
@@ -85,7 +85,7 @@ export function AnimatedTextIcons() {
               variants={textVariants}
               className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white"
             >
-              That
+              on
             </motion.h2>
             <motion.div
               variants={iconVariants}
@@ -97,7 +97,7 @@ export function AnimatedTextIcons() {
               variants={textVariants}
               className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white"
             >
-              must-see movie.
+              a
             </motion.h2>
           </div>
 
@@ -107,7 +107,7 @@ export function AnimatedTextIcons() {
               variants={textVariants}
               className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white"
             >
-              Your top
+              single
             </motion.h2>
             <motion.div
               variants={iconVariants}
@@ -119,7 +119,7 @@ export function AnimatedTextIcons() {
               variants={textVariants}
               className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white"
             >
-              interests and
+              Dapp
             </motion.h2>
           </div>
 
@@ -129,7 +129,7 @@ export function AnimatedTextIcons() {
               variants={textVariants}
               className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white"
             >
-              all your shopping
+              provide liquidity to
             </motion.h2>
             <motion.div
               variants={iconVariants}
@@ -147,7 +147,7 @@ export function AnimatedTextIcons() {
               variants={textVariants}
               className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white"
             >
-              habits.
+              pools.
             </motion.h2>
           </div>
         </motion.div>

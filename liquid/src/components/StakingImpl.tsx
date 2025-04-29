@@ -36,7 +36,6 @@ const StakingImpl: React.FC = () => {
     setMessage('');
 
     try {
-      // Validate inputs
       if (!publicKey) {
         throw new Error('Please connect your Freighter wallet.');
       }
@@ -47,7 +46,6 @@ const StakingImpl: React.FC = () => {
         throw new Error('Reward rate must be positive.');
       }
 
-      // Call the initialize function
       await initialize(publicKey, tokenAddress, Number(rewardRate));
       setMessage('Contract initialized successfully!');
 

@@ -12,7 +12,9 @@ function App() {
     <>
       
       <Routes>
-        <Route path="/" element={<PriceOracleApp />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/home" element={<LiquidationPoolApp />} />
+
       </Routes>
     </>
   );

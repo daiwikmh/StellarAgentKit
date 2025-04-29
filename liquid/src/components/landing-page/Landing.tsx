@@ -1,3 +1,4 @@
+import { Footer } from "./navigation/Footer";
 import Navbar from "./navigation/Navigation";
 import { Bento } from "./stats/Bento";
 import HeroSection from "./stats/HeroSection";
@@ -17,6 +18,7 @@ export default function LandingPage() {
         <Features/>
         <AnimatedTextIcons/>
         <Bento/>
+        <Footer/>
       </main>
     </div>
   );

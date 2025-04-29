@@ -91,7 +91,7 @@ const LiquidationPoolApp: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-        <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Liquidation Pool DApp</h1>
+        <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Liquidation Pool Deposit</h1>
         {!isWalletConnected ? (
           <button
             onClick={connectWallet}
@@ -105,27 +105,91 @@ const LiquidationPoolApp: React.FC = () => {
             <p className="text-sm text-gray-600 mb-4">
               Connected: {publicKey.slice(0, 6)}...{publicKey.slice(-6)}
             </p>
-            <div className="space-y-4">
+            <form onSubmit={handleDeposit} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Recipient Address
+                  <input
+                    type="text"
+                    value={to}
+                    onChange={(e) => setTo(e.target.value)}
+                    placeholder="G..."
+                    disabled={loading}
+                    className="mt-1 w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+                  />
+                </label>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Desired A (stroops)
+                  <input
+                    type="text"
+                    value={desiredA}
+                    onChange={(e) => setDesiredA(e.target.value)}
+                    placeholder="e.g., 10000000"
+                    disabled={loading}
+                    className="mt-1 w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+                  />
+                </label>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Min A (stroops)
+                  <input
+                    type="text"
+                    value={minA}
+                    onChange={(e) => setMinA(e.target.value)}
+                    placeholder="e.g., 9000000"
+                    disabled={loading}
+                    className="mt-1 w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+                  />
+                </label>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Desired B (stroops)
+                  <input
+                    type="text"
+                    value={desiredB}
+                    onChange={(e) => setDesiredB(e.target.value)}
+                    placeholder="e.g., 10000000"
+                    disabled={loading}
+                    className="mt-1 w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+                  />
+                </label>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Min B (stroops)
+                  <input
+                    type="text"
+                    value={minB}
+                    onChange={(e) => setMinB(e.target.value)}
+                    placeholder="e.g., 9000000"
+                    disabled={loading}
+                    className="mt-1 w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+                  />
+                </label>
+              </div>
+              <p className="text-xs text-gray-500">
+                Note: All amounts are in stroops (1 XLM = 10,000,000 stroops).
+              </p>
               <button
-                onClick={handleGetShareId}
+                type="submit"
                 disabled={loading}
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+                className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
               >
-                {loading ? "Fetching..." : "Get Share ID"}
+                {loading ? "Processing..." : "Deposit"}
               </button>
-              {shareId && (
-                <p className="text-sm text-gray-600">
-                  Share ID: {shareId.slice(0, 6)}...{shareId.slice(-6)}
-                </p>
-              )}
               <button
+                type="button"
                 onClick={handleDisconnect}
                 disabled={loading}
                 className="w-full bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
               >
                 Disconnect Wallet
               </button>
-            </div>
+            </form>
           </div>
         )}
         {message && (
@@ -141,5 +205,7 @@ const LiquidationPoolApp: React.FC = () => {
     </div>
   );
 };
+
+
 
 export default LiquidationPoolApp;

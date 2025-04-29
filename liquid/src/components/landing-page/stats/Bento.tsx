@@ -1,11 +1,12 @@
 import { User, Wallet, BarChart3, CreditCard } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import agent from "@/assets/agent.jpeg"
 
 export function Bento() {
   return (
-    <div className="w-full py-20 lg:py-40">
-      <div className="container mx-auto">
-        <div className="flex flex-col gap-10">
+    <div className="w-full py-12 lg:py-24">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col gap-8">
           <div className="flex gap-4 flex-col items-start">
             <div>
               <Badge>Platform</Badge>
@@ -17,11 +18,11 @@ export function Bento() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-emerald-900 to-emerald-700 rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col relative overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-gradient-to-br from-emerald-900 to-emerald-700 rounded-lg h-full lg:col-span-2 p-8 aspect-[4/3] lg:aspect-[2/1] flex justify-between flex-col relative overflow-hidden">
               <div className="absolute top-0 right-0 w-1/2 h-1/2 opacity-20">
                 <img
-                  src="/placeholder.svg?height=200&width=200"
+                  src={agent}
                   alt="Payment illustration"
                   width={200}
                   height={200}
@@ -73,7 +74,7 @@ export function Bento() {
                 </p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-sky-900 to-sky-700 rounded-md h-full lg:col-span-2 p-6 aspect-square lg:aspect-auto flex justify-between flex-col relative overflow-hidden">
+            <div className="bg-gradient-to-br from-sky-900 to-sky-700 rounded-lg h-full lg:col-span-2 p-8 aspect-[4/3] lg:aspect-[2/1] flex justify-between flex-col relative overflow-hidden">
               <div className="absolute top-0 right-0 w-1/2 h-1/2 opacity-20">
                 <img
                   src="/placeholder.svg?height=200&width=200"
