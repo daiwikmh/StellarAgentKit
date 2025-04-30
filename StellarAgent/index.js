@@ -3,12 +3,12 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import validateEnvironment from "./evnValidation.js";
-import { startWsServer } from "../agent/wsServer.js";
+import { startWsServer } from "./wsServer.js";
 
 dotenv.config();
 validateEnvironment();
 
-let currentUserEmail = "daiwik.sharmq@gmail.com"; // Set default email for testing
+let currentUserEmail = "daiwikmahesh@gmail.com"; // Set default email for testing
 
 const app = express();
 app.use(cors({
