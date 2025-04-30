@@ -1,5 +1,4 @@
-
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Message } from '@/tools/index';
 import ChatBubble from './ChatBubble';
 import { Button } from '@/components/ui/button';
@@ -20,12 +19,9 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, onSendMessage, isLoad
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (input.trim() === '' || isLoading) return;
-    
     onSendMessage(input);
     setInput('');
-    
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
     }
@@ -40,15 +36,12 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, onSendMessage, isLoad
 
   const handleTextareaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(e.target.value);
-    
-    // Auto-resize the textarea
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
   };
 
-  // Scroll to bottom when messages change
   useEffect(() => {
     if (endOfMessagesRef.current) {
       endOfMessagesRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -56,12 +49,11 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, onSendMessage, isLoad
   }, [messages]);
 
   return (
-    <div className="h-full flex flex-col glass rounded-xl overflow-hidden">
+    <div className="h-full flex flex-col bg-white/20 border border-white/30 rounded-xl">
       <div className="p-4 border-b border-white/20">
         <h2 className="text-lg font-semibold">Chat with AI</h2>
       </div>
-      
-      <ScrollArea className="flex-1 p-4">
+      <ScrollArea className="flex-1 p-4 max-h-[calc(100vh-200px)]">
         {messages.length > 0 ? (
           <div className="space-y-4">
             {messages.map((message) => (
@@ -74,18 +66,25 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, onSendMessage, isLoad
             <p className="text-center">No messages yet. Start a conversation with the AI.</p>
           </div>
         )}
-        
         {isLoading && (
           <div className="flex justify-center items-center my-4">
             <div className="flex space-x-2">
-              <div className="w-2 h-2 rounded-full bg-pink-400 animate-bounce" style={{ animationDelay: '0ms' }}></div>
-              <div className="w-2 h-2 rounded-full bg-pink-400 animate-bounce" style={{ animationDelay: '150ms' }}></div>
-              <div className="w-2 h-2 rounded-full bg-pink-400 animate-bounce" style={{ animationDelay: '300ms' }}></div>
+              <div
+                className="w-2 h-2 rounded-full bg-pink-400 animate-bounce"
+                style={{ animationDelay: '0ms' }}
+              ></div>
+              <div
+                className="w-2 h-2 rounded-full bg-pink-400 animate-bounce"
+                style={{ animationDelay: '150ms' }}
+              ></div>
+              <div
+                className="w-2 h-2 rounded-full bg-pink-400 animate-bounce"
+                style={{ animationDelay: '300ms' }}
+              ></div>
             </div>
           </div>
         )}
       </ScrollArea>
-      
       <div className="p-4 border-t border-white/20">
         <form onSubmit={handleSubmit} className="flex gap-2">
           <Textarea
@@ -97,9 +96,9 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, onSendMessage, isLoad
             className="resize-none min-h-[40px] max-h-[200px] glass-card"
             disabled={isLoading}
           />
-          <Button 
-            type="submit" 
-            size="icon" 
+          <Button
+            type="submit"
+            size="icon"
             disabled={input.trim() === '' || isLoading}
             className="bg-pink-500 hover:bg-pink-600 text-white"
           >

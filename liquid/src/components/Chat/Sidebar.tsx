@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { Message } from '@/tools/index';
 import ToolCard from './ToolCard';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -16,7 +14,7 @@ const Sidebar: React.FC<SidebarProps> = ({ messages, isConnected }) => {
     .flatMap(msg => msg.toolCalls || []);
 
   return (
-    <div className="h-full flex flex-col glass rounded-xl">
+    <div className="h-full flex flex-col bg-white/20 backdrop-blur-md border border-white/30 rounded-xl overflow-hidden">
       <div className="p-4 border-b border-white/20">
         <h2 className="text-lg font-semibold">Agent Tools</h2>
         <div className="flex items-center mt-2">
@@ -25,18 +23,20 @@ const Sidebar: React.FC<SidebarProps> = ({ messages, isConnected }) => {
         </div>
       </div>
       
-      <ScrollArea className="flex-1 p-3">
-        {toolCalls.length > 0 ? (
-          <div className="space-y-3">
-            {toolCalls.map(toolCall => (
-              <ToolCard key={toolCall.id} toolCall={toolCall} />
-            ))}
-          </div>
-        ) : (
-          <div className="flex h-full items-center justify-center text-gray-400 text-sm p-4 text-center">
-            No tool calls yet. Ask the AI to use tools in your conversation.
-          </div>
-        )}
+      <ScrollArea className="flex-1 relative" style={{ height: 'calc(100vh - 180px)' }}>
+        <div className="absolute inset-0 p-3">
+          {toolCalls.length > 0 ? (
+            <div className="space-y-3">
+              {toolCalls.map(toolCall => (
+                <ToolCard key={toolCall.id} toolCall={toolCall} />
+              ))}
+            </div>
+          ) : (
+            <div className="flex h-full items-center justify-center text-gray-400 text-sm p-4 text-center">
+              No tool calls yet. Ask the AI to use tools in your conversation.
+            </div>
+          )}
+        </div>
       </ScrollArea>
     </div>
   );

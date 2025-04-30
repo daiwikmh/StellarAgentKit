@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Message, ToolCall } from '@/tools/index';
 import ReactMarkdown from 'react-markdown';
 import { Badge } from '@/components/ui/badge';
@@ -59,8 +59,9 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
       isAi ? "mr-auto" : "ml-auto"
     )}>
       <div className={cn(
-        isAi ? "chat-bubble-ai" : "chat-bubble-user",
-        isAi ? "glow-border" : "",
+        isAi 
+          ? "rounded-xl p-4 bg-chat-bubble-ai/60 backdrop-blur-sm border border-chat-glow/30 shadow-sm" 
+          : "rounded-xl p-4 bg-chat-bubble-user/80 backdrop-blur-sm border border-gray-200 shadow-sm",
         "overflow-hidden"
       )}>
         {isAi ? (

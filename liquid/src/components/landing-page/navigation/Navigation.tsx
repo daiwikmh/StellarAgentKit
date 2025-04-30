@@ -26,9 +26,11 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-        <Button className="bg-transparent border border-green-500 text-green-500 hover:bg-green-500 hover:text-black transition-all">
-          Launch Agent
-        </Button>
+        <Link to="/chat">
+          <Button className="bg-transparent border border-green-500 text-green-500 hover:bg-green-500 hover:text-black transition-all">
+            Launch Agent
+          </Button>
+        </Link>
       </div>
     </nav>
   );

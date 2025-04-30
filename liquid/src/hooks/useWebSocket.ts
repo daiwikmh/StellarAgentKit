@@ -37,15 +37,14 @@ export const useWebSocket = () => {
               if (data.content) {
                 const messageId = `ai-${Date.now()}`;
                 
-                setMessages(prevMessages => {
+                setMessages((prevMessages: Message[]) => {
                   // Check if we already have a message from the AI that we should update
                   const lastMessage = prevMessages[prevMessages.length - 1];
                   if (lastMessage && lastMessage.role === 'ai') {
-                    // Update the existing message
                     const updatedMessages = [...prevMessages];
                     updatedMessages[prevMessages.length - 1] = {
                       ...lastMessage,
-                      content: data.content
+                      content: data.content || ''
                     };
                     return updatedMessages;
                   } else {

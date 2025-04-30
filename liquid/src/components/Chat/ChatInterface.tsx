@@ -1,5 +1,4 @@
 
-import React from 'react';
 import Sidebar from './Sidebar';
 import ChatWindow from './ChatWindow';
 import useWebSocket from '@/hooks/useWebSocket';
@@ -16,7 +15,7 @@ const ChatInterface: React.FC = () => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(isMobile);
 
   return (
-    <div className="h-screen w-full pink-gradient p-4 flex flex-col">
+    <div className="h-screen w-full bg-gradient-to-br from-white to-pink-200 p-4 flex flex-col">
       <div className="flex-1 flex gap-4 overflow-hidden">
         {/* Sidebar */}
         <div className={cn(
