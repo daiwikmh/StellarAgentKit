@@ -11,8 +11,6 @@
   },
   "dependencies": {
     "@allbridge/bridge-core-sdk": "^3.22.0",
-    "@aptos-labs/wallet-adapter-react": "^5.0.0",
-    "@creit.tech/stellar-wallets-kit": "^1.7.3",
     "@langchain/community": "^0.3.41",
     "@langchain/core": "^0.3.49",
     "@langchain/openai": "^0.5.7",

@@ -37,12 +37,12 @@ import {
   }
   
   // Utility functions for ScVal conversion
-  const addressToScVal = (address: string): xdr.ScVal => {
-    if (!address.match(/^[CG][A-Z0-9]{55}$/)) {
-      throw new Error(`Invalid address format: ${address}`);
-    }
-    return nativeToScVal(new Address(address), { type: "address" });
-  };
+  // const addressToScVal = (address: string): xdr.ScVal => {
+  //   if (!address.match(/^[CG][A-Z0-9]{55}$/)) {
+  //     throw new Error(`Invalid address format: ${address}`);
+  //   }
+  //   return nativeToScVal(new Address(address), { type: "address" });
+  // };
   
   const numberToU32 = (value: number): xdr.ScVal => {
     if (!Number.isInteger(value) || value < 0 || value > 4294967295) {

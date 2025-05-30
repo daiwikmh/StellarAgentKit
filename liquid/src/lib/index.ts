@@ -1,25 +1,25 @@
 import { Buffer } from "buffer";
-import { Address } from '@stellar/stellar-sdk';
+// import { Address } from '@stellar/stellar-sdk';
 import {
   AssembledTransaction,
   Client as ContractClient,
   ClientOptions as ContractClientOptions,
   MethodOptions,
-  Result,
+  // Result,
   Spec as ContractSpec,
 } from '@stellar/stellar-sdk/contract';
 import type {
-  u32,
-  i32,
-  u64,
-  i64,
-  u128,
+  // u32,
+  // i32,
+  // u64,
+  // i64,
+  // u128,
   i128,
-  u256,
-  i256,
-  Option,
-  Typepoint,
-  Duration,
+  // u256,
+  // i256,
+  // Option,
+  // Typepoint,
+  // Duration,
 } from '@stellar/stellar-sdk/contract';
 export * from '@stellar/stellar-sdk'
 export * as contract from '@stellar/stellar-sdk/contract'
@@ -160,7 +160,8 @@ export class Client extends ContractClient {
         format?: "hex" | "base64";
       }
   ): Promise<AssembledTransaction<T>> {
-    return ContractClient.deploy(null, options)
+    throw new Error("Custom deploy logic not implemented.");
+
   }
   constructor(public readonly options: ContractClientOptions) {
     super(

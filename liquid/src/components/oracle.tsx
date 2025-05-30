@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { price, assets, Asset, PriceData } from "@/hooks/myoracle"; // Adjust path to PriceOracle.ts
+import { price, assets, Asset } from "@/hooks/myoracle"; // Adjust path to PriceOracle.ts
 import { disconnect } from "@/lib/stellar";
 
 // Assuming kit and getSelectedWalletId are imported or defined

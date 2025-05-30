@@ -51,7 +51,7 @@ export const useWebSocket = () => {
                     // Add a new AI message
                     return [...prevMessages, {
                       id: messageId,
-                      content: data.content,
+                      content: data.content || '',
                       role: 'ai',
                       timestamp: Date.now()
                     }];

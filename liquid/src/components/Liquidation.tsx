@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { isConnected, getAddress } from "@stellar/freighter-api";
-import { getShareId, deposit } from "@/hooks/LiquidationPool"; // Adjust path to LiquidationPool.ts
+import {  deposit } from "@/hooks/LiquidationPool"; // Adjust path to LiquidationPool.ts
 import { disconnect } from "@/lib/stellar";
 
 const LiquidationPoolApp: React.FC = () => {
   // State for wallet and UI
   const [publicKey, setPublicKey] = useState<string>(""); // User's public key from Freighter
   const [isWalletConnected, setIsWalletConnected] = useState<boolean>(false); // Wallet status
-  const [shareId, setShareId] = useState<string | null>(null); // Share ID
+  // const [ setShareId] = useState<string | null>(null); // Share ID
   const [loading, setLoading] = useState<boolean>(false); // Loading state
   const [message, setMessage] = useState<string>(""); // Feedback messages
   const [minA, setMinA] = useState<string>(""); // Minimum amount of token A
@@ -38,7 +38,7 @@ const LiquidationPoolApp: React.FC = () => {
       await disconnect();
       setPublicKey("");
       setIsWalletConnected(false);
-      setShareId(null);
+      // setShareId(null);
       setMessage("Wallet disconnected successfully!");
     } catch (error: any) {
       setMessage(`Error disconnecting wallet: ${error.message || error.toString()}`);
@@ -51,11 +51,12 @@ const LiquidationPoolApp: React.FC = () => {
       setMessage("Please connect your Freighter wallet.");
       return;
     }
+    console.log(handleGetShareId)
     setLoading(true);
     setMessage("");
     try {
-      const result = await getShareId(publicKey); // Pass publicKey as caller
-      setShareId(result);
+      // const result = await getShareId(publicKey); // Pass publicKey as caller
+      // setShareId(result);
       setMessage("Share ID fetched successfully!");
     } catch (error: any) {
       setMessage(`Error fetching share ID: ${error.message || error.toString()}`);

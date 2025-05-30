@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import * as StellarSdk from "stellar-sdk";
 import { signTransaction, getPublicKey, connect } from "@/lib/stellar";
 import { toast } from "sonner";

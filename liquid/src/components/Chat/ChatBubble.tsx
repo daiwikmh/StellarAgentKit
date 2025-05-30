@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Message, ToolCall } from '@/tools/index';
 import ReactMarkdown from 'react-markdown';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 

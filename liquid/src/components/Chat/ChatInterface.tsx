@@ -4,7 +4,6 @@ import ChatWindow from './ChatWindow';
 import useWebSocket from '@/hooks/useWebSocket';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';

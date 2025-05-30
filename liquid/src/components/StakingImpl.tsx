@@ -3,7 +3,7 @@ import { initialize } from '@/hooks/StakingApp'; // Adjust path to your contract
 import {
     isConnected,
     getAddress,
-    signTransaction,
+    
   } from "@stellar/freighter-api";
 const StakingImpl: React.FC = () => {
   // State for user input and UI feedback

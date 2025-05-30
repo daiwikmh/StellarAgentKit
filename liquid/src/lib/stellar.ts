@@ -8,7 +8,7 @@ import {
 
 const SELECTED_WALLET_ID = "selectedWalletId";
 
-function getSelectedWalletId() {
+export function getSelectedWalletId() {
     return localStorage.getItem(SELECTED_WALLET_ID);
 }
 
