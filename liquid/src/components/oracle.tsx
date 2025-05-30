@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { price, assets, Asset } from "@/hooks/myoracle"; // Adjust path to PriceOracle.ts
 import { disconnect } from "@/lib/stellar";
 

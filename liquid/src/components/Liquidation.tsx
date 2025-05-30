@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { isConnected, getAddress } from "@stellar/freighter-api";
 import {  deposit } from "@/hooks/LiquidationPool"; // Adjust path to LiquidationPool.ts
 import { disconnect } from "@/lib/stellar";
