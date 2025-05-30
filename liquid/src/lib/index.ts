@@ -150,15 +150,15 @@ export interface Client {
 export class Client extends ContractClient {
   static async deploy<T = Client>(
     /** Options for initalizing a Client as well as for calling a method, with extras specific to deploying. */
-    options: MethodOptions &
-      Omit<ContractClientOptions, "contractId"> & {
-        /** The hash of the Wasm blob, which must already be installed on-chain. */
-        wasmHash: Buffer | string;
-        /** Salt used to generate the contract's ID. Passed through to {@link Operation.createCustomContract}. Default: random. */
-        salt?: Buffer | Uint8Array;
-        /** The format used to decode `wasmHash`, if it's provided as a string. */
-        format?: "hex" | "base64";
-      }
+    // options: MethodOptions &
+    //   Omit<ContractClientOptions, "contractId"> & {
+    //     /** The hash of the Wasm blob, which must already be installed on-chain. */
+    //     wasmHash: Buffer | string;
+    //     /** Salt used to generate the contract's ID. Passed through to {@link Operation.createCustomContract}. Default: random. */
+    //     salt?: Buffer | Uint8Array;
+    //     /** The format used to decode `wasmHash`, if it's provided as a string. */
+    //     format?: "hex" | "base64";
+    //   }
   ): Promise<AssembledTransaction<T>> {
     throw new Error("Custom deploy logic not implemented.");
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { initialize } from '@/hooks/StakingApp'; // Adjust path to your contract.ts
 import {
     isConnected,
